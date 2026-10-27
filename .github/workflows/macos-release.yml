@@ -1,0 +1,64 @@
+name: macOS build and release
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing draft release tag
+        required: true
+        default: v1.3.1
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build universal application
+        run: bash macos/build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mac-release
+          path: |
+            build/macos/OrbitLibrary-Mac.zip
+            build/macos/OrbitLibrary-Mac.zip.sha256
+  test:
+    needs: build
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-15, macos-15-intel]
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: mac-release
+          path: package
+      - name: Extract and validate on native architecture
+        run: |
+          mkdir -p extracted
+          ditto -x -k package/OrbitLibrary-Mac.zip extracted
+          APP="extracted/Orbit Library.app/Contents/MacOS/OrbitLibrary"
+          "$APP" --self-test
+          "$APP" --smoke-test "$PWD/smoke"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mac-validation-${{ matrix.runner }}
+          path: smoke/
+          if-no-files-found: ignore
+  upload:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: mac-release
+          path: package
+      - name: Attach verified Mac app to draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: gh release upload "$RELEASE_TAG" package/OrbitLibrary-Mac.zip package/OrbitLibrary-Mac.zip.sha256 --clobber

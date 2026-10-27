@@ -11,3 +11,5 @@
 /benchmark.json
 /*-preview.png
 /self-test-result.txt
+/build/
+/smoke/

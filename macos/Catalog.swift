@@ -1,0 +1,35 @@
+import Foundation
+
+enum Catalog {
+    static let all: [SystemDef] = [
+        SystemDef(id: "nes", name: "Nintendo Entertainment System", emulator: "Mesen", core: "mesen_libretro.dylib", extensions: ".nes|.fds|.zip", aliases: "nes|famicom", arguments: "\"{rom}\""),
+        SystemDef(id: "snes", name: "Super Nintendo", emulator: "Snes9x / Mesen", core: "snes9x_libretro.dylib", extensions: ".sfc|.smc|.zip", aliases: "snes|sfc|supernintendo", arguments: "\"{rom}\""),
+        SystemDef(id: "n64", name: "Nintendo 64", emulator: "ares / RetroArch", core: "mupen64plus_next_libretro.dylib", extensions: ".n64|.z64|.v64|.zip", aliases: "n64|nintendo64", arguments: "\"{rom}\""),
+        SystemDef(id: "gb", name: "Game Boy", emulator: "mGBA", core: "gambatte_libretro.dylib", extensions: ".gb|.zip", aliases: "gb|gameboy", arguments: "\"{rom}\""),
+        SystemDef(id: "gbc", name: "Game Boy Color", emulator: "mGBA", core: "gambatte_libretro.dylib", extensions: ".gbc|.zip", aliases: "gbc|gameboycolor", arguments: "\"{rom}\""),
+        SystemDef(id: "gba", name: "Game Boy Advance", emulator: "mGBA", core: "mgba_libretro.dylib", extensions: ".gba|.zip", aliases: "gba|gameboyadvance", arguments: "\"{rom}\""),
+        SystemDef(id: "nds", name: "Nintendo DS", emulator: "melonDS", core: "melondsds_libretro.dylib", extensions: ".nds|.zip", aliases: "nds|ds|nintendods", arguments: "\"{rom}\""),
+        SystemDef(id: "3ds", name: "Nintendo 3DS", emulator: "Azahar", core: "azahar_libretro.dylib", extensions: ".3ds|.cci|.cxi|.app", aliases: "3ds|n3ds|nintendo3ds", arguments: "\"{rom}\""),
+        SystemDef(id: "gc", name: "Nintendo GameCube", emulator: "Dolphin", core: "dolphin_libretro.dylib", extensions: ".iso|.gcm|.rvz|.ciso|.wia", aliases: "gc|gamecube", arguments: "-b -e \"{rom}\""),
+        SystemDef(id: "wii", name: "Nintendo Wii", emulator: "Dolphin", core: "dolphin_libretro.dylib", extensions: ".iso|.wbfs|.rvz|.wad|.ciso", aliases: "wii", arguments: "-b -e \"{rom}\""),
+        SystemDef(id: "wiiu", name: "Nintendo Wii U", emulator: "Cemu", core: "", extensions: ".wud|.wux|.rpx|.wua", aliases: "wiiu", arguments: "-g \"{rom}\""),
+        SystemDef(id: "switch", name: "Nintendo Switch", emulator: "Configure your emulator", core: "", extensions: ".nsp|.xci|.nro", aliases: "switch|nintendoswitch", arguments: "\"{rom}\""),
+        SystemDef(id: "psx", name: "PlayStation", emulator: "DuckStation", core: "swanstation_libretro.dylib", extensions: ".cue|.chd|.pbp|.iso|.m3u", aliases: "psx|ps1|playstation", arguments: "-batch \"{rom}\""),
+        SystemDef(id: "ps2", name: "PlayStation 2", emulator: "PCSX2", core: "lrps2_libretro.dylib", extensions: ".iso|.chd|.cso|.bin|.m3u", aliases: "ps2|playstation2", arguments: "-batch \"{rom}\""),
+        SystemDef(id: "ps3", name: "PlayStation 3", emulator: "RPCS3", core: "", extensions: ".elf|.self", aliases: "ps3|playstation3", arguments: "\"{rom}\""),
+        SystemDef(id: "psp", name: "PlayStation Portable", emulator: "PPSSPP", core: "ppsspp_libretro.dylib", extensions: ".iso|.cso|.pbp|.chd", aliases: "psp", arguments: "\"{rom}\""),
+        SystemDef(id: "megadrive", name: "Sega Mega Drive / Genesis", emulator: "RetroArch / ares", core: "genesis_plus_gx_libretro.dylib", extensions: ".md|.gen|.smd|.bin|.zip", aliases: "megadrive|genesis|md", arguments: "\"{rom}\""),
+        SystemDef(id: "mastersystem", name: "Sega Master System", emulator: "RetroArch", core: "genesis_plus_gx_libretro.dylib", extensions: ".sms|.zip", aliases: "mastersystem|sms", arguments: "\"{rom}\""),
+        SystemDef(id: "gamegear", name: "Sega Game Gear", emulator: "RetroArch", core: "genesis_plus_gx_libretro.dylib", extensions: ".gg|.zip", aliases: "gamegear|gg", arguments: "\"{rom}\""),
+        SystemDef(id: "segacd", name: "Sega CD", emulator: "RetroArch", core: "genesis_plus_gx_libretro.dylib", extensions: ".cue|.chd|.iso|.m3u", aliases: "segacd|megacd", arguments: "\"{rom}\""),
+        SystemDef(id: "sega32x", name: "Sega 32X", emulator: "RetroArch / ares", core: "picodrive_libretro.dylib", extensions: ".32x|.bin|.zip", aliases: "sega32x|32x", arguments: "\"{rom}\""),
+        SystemDef(id: "saturn", name: "Sega Saturn", emulator: "Mednafen / RetroArch", core: "mednafen_saturn_libretro.dylib", extensions: ".cue|.chd|.iso|.m3u", aliases: "saturn|segasaturn", arguments: "\"{rom}\""),
+        SystemDef(id: "dreamcast", name: "Sega Dreamcast", emulator: "Flycast", core: "flycast_libretro.dylib", extensions: ".gdi|.chd|.cdi|.cue", aliases: "dreamcast|dc", arguments: "\"{rom}\""),
+        SystemDef(id: "xbox", name: "Original Xbox", emulator: "xemu", core: "", extensions: ".iso", aliases: "xbox", arguments: "-dvd_path \"{rom}\""),
+        SystemDef(id: "xbox360", name: "Xbox 360", emulator: "Xenia", core: "", extensions: ".iso|.xex", aliases: "xbox360|x360", arguments: "\"{rom}\""),
+        SystemDef(id: "arcade", name: "Arcade / Neo Geo", emulator: "MAME / RetroArch", core: "fbneo_libretro.dylib", extensions: ".zip|.7z", aliases: "arcade|mame|fbneo|neogeo", arguments: "{name}"),
+        SystemDef(id: "pce", name: "PC Engine / TurboGrafx-16", emulator: "RetroArch", core: "mednafen_pce_fast_libretro.dylib", extensions: ".pce|.cue|.chd|.zip", aliases: "pce|pcengine|tg16", arguments: "\"{rom}\""),
+        SystemDef(id: "atari2600", name: "Atari 2600", emulator: "Stella", core: "stella_libretro.dylib", extensions: ".a26|.bin|.zip", aliases: "atari2600|2600", arguments: "\"{rom}\""),
+        SystemDef(id: "dos", name: "DOS PC", emulator: "DOSBox / RetroArch", core: "dosbox_pure_libretro.dylib", extensions: ".zip|.conf|.exe|.com", aliases: "dos|pcdos", arguments: "\"{rom}\""),
+    ]
+}
