@@ -1,6 +1,8 @@
 import AppKit
 import SwiftUI
 import GameController
+import ImageIO
+import UniformTypeIdentifiers
 
 @MainActor final class LibraryModel: ObservableObject {
     @Published var library: LibraryData
@@ -62,7 +64,7 @@ import GameController
     }
     func setCover() {
         guard let id = selectedID, let index = library.games.firstIndex(where: { $0.id == id }) else { return }
-        let dialog = NSOpenPanel(); dialog.title = "Choose game artwork"; dialog.allowedFileTypes = ["png", "jpg", "jpeg", "bmp"]
+        let dialog = NSOpenPanel(); dialog.title = "Choose game artwork"; dialog.allowedContentTypes = [.png, .jpeg, .bmp]
         if dialog.runModal() == .OK, let file = dialog.url {
             library.games[index].cover = file.path; artworkRevision += 1; ImageCache.shared.clear(); save(); refresh()
         }
@@ -108,7 +110,7 @@ import GameController
         if dialog.runModal() == .OK, let file = dialog.url { do { try JSONEncoder().encode(library).write(to: file, options: .atomic) } catch { self.error = error.localizedDescription } }
     }
     func importLibrary() {
-        let dialog = NSOpenPanel(); dialog.title = "Import an Orbit library JSON file"; dialog.allowedFileTypes = ["json"]
+        let dialog = NSOpenPanel(); dialog.title = "Import an Orbit library JSON file"; dialog.allowedContentTypes = [.json]
         if dialog.runModal() == .OK, let file = dialog.url {
             do { var data = try JSONDecoder().decode(LibraryData.self, from: Data(contentsOf: file)); data.completePresets(); library = data; save(); refresh(); status = "Library imported. Configure Mac emulator and ROM paths in System setup." }
             catch { self.error = error.localizedDescription }
@@ -137,34 +139,39 @@ import GameController
     }
 }
 
+// CGImage is fully decoded before this immutable ownership handoff. AppKit images
+// are created and cached only on the main actor; the worker never mutates them.
+private struct DecodedArtwork: @unchecked Sendable { let pixels: CGImage? }
 @MainActor final class ImageCache {
     static let shared = ImageCache()
     private let cache = NSCache<NSString, NSImage>()
-    private var pending: [String: Task<NSImage?, Never>] = [:]
+    private var pending: [String: Task<DecodedArtwork, Never>] = [:]
     init() { cache.totalCostLimit = 64 * 1024 * 1024; cache.countLimit = 160 }
     func clear() { cache.removeAllObjects() }
     func image(path: String, size: Int, sidecar: Bool = false) async -> NSImage? {
         let key = path + "|\(size)|\(sidecar)"
         if let image = cache.object(forKey: key as NSString) { return image }
-        if let task = pending[key] { return await task.value }
-        let task = Task.detached(priority: .utility) { () -> NSImage? in autoreleasepool {
-            var file = URL(fileURLWithPath: path)
-            if sidecar {
-                guard let found = ["png", "jpg", "jpeg"].map({ file.deletingPathExtension().appendingPathExtension($0) }).first(where: { FileManager.default.fileExists(atPath: $0.path) }) else { return nil }
-                file = found
-            }
-            guard let image = NSImage(contentsOf: file), image.size.width > 0, image.size.height > 0 else { return nil }
-            let scale = min(1, CGFloat(size) / max(image.size.width, image.size.height))
-            let width = max(1, Int(image.size.width * scale)), height = max(1, Int(image.size.height * scale))
-            guard let rep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: width, pixelsHigh: height, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0), let context = NSGraphicsContext(bitmapImageRep: rep) else { return nil }
-            NSGraphicsContext.saveGraphicsState(); NSGraphicsContext.current = context; context.imageInterpolation = .high
-            image.draw(in: NSRect(x: 0, y: 0, width: width, height: height), from: .zero, operation: .copy, fraction: 1)
-            NSGraphicsContext.restoreGraphicsState(); let result = NSImage(size: NSSize(width: width, height: height)); result.addRepresentation(rep); return result
-        } }
-        pending[key] = task
-        let result = await task.value; pending[key] = nil
-        if let result { cache.setObject(result, forKey: key as NSString, cost: Int(result.size.width * result.size.height) * 4) }
-        return result
+        let task: Task<DecodedArtwork, Never>
+        if let existing = pending[key] { task = existing }
+        else {
+            task = Task.detached(priority: .utility) { () -> DecodedArtwork in autoreleasepool {
+                var file = URL(fileURLWithPath: path)
+                if sidecar {
+                    guard let found = ["png", "jpg", "jpeg"].map({ file.deletingPathExtension().appendingPathExtension($0) }).first(where: { FileManager.default.fileExists(atPath: $0.path) }) else { return DecodedArtwork(pixels: nil) }
+                    file = found
+                }
+                guard let source = CGImageSourceCreateWithURL(file as CFURL, nil) else { return DecodedArtwork(pixels: nil) }
+                let options: [CFString: Any] = [kCGImageSourceCreateThumbnailFromImageAlways: true, kCGImageSourceThumbnailMaxPixelSize: size, kCGImageSourceCreateThumbnailWithTransform: true, kCGImageSourceShouldCacheImmediately: true]
+                return DecodedArtwork(pixels: CGImageSourceCreateThumbnailAtIndex(source, 0, options as CFDictionary))
+            } }
+            pending[key] = task
+        }
+        let decoded = await task.value; pending[key] = nil
+        if let image = cache.object(forKey: key as NSString) { return image }
+        guard let pixels = decoded.pixels else { return nil }
+        let image = NSImage(cgImage: pixels, size: NSSize(width: pixels.width, height: pixels.height))
+        cache.setObject(image, forKey: key as NSString, cost: pixels.width * pixels.height * 4)
+        return image
     }
 }
 

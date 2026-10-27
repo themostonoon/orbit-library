@@ -17,7 +17,7 @@ xcrun swiftc -swift-version 5 "$ROOT/macos/BuildIcon.swift" -o "$OUT/build-icon"
 iconutil -c icns "$OUT/Orbit.iconset" -o "$APP/Contents/Resources/Orbit.icns"
 codesign --force --deep --sign - "$APP"
 codesign --verify --deep --strict "$APP"
-lipo -verify_arch arm64 x86_64 "$APP/Contents/MacOS/OrbitLibrary"
+lipo "$APP/Contents/MacOS/OrbitLibrary" -verify_arch arm64 x86_64
 cp "$ROOT/macos/START-HERE-MAC.txt" "$OUT/START-HERE-MAC.txt"
 cd "$OUT"
 ditto -c -k --sequesterRsrc --keepParent "Orbit Library.app" OrbitLibrary-Mac.zip
