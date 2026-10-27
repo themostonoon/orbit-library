@@ -1,0 +1,13 @@
+/data/
+/benchmark-data/
+/regression-data/
+/preview-data/
+/OrbitTest-*/
+*.exe
+*.zip
+*.pdb
+*.bak
+*.tmp
+/benchmark.json
+/*-preview.png
+/self-test-result.txt

@@ -1,0 +1,1 @@
+PASS: 10,000-game virtual gallery; bounded UI controls and visible-tile cache; last-game navigation; latest-query search; responsive background scan and import; duplicate prevention; favorites preserved; asynchronous downsampled artwork; bounded artwork cache; console/favorite filters; repeated resize GDI handle stability.

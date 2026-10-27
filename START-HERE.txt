@@ -1,0 +1,150 @@
+ORBIT LIBRARY - Windows portable emulator frontend
+Version 1.3 - Smooth rendering update
+
+GET STARTED
+1. Extract the ZIP to a writable folder, such as Documents\OrbitLibrary.
+2. Double-click OrbitLibrary.exe.
+3. A three-second animated Orbit logo intro appears, then the library opens fullscreen. Click System setup. Pick a console, its ROM folder, and an emulator EXE.
+4. Save setup, then click Scan library.
+5. Select a game and press Enter or click Play.
+
+Nothing needs installing on a normal Windows 10/11 PC with .NET Framework
+4.8 enabled. No Node.js or Python runtime is required. This is an unsigned,
+locally built application, so Windows may show a publisher warning.
+
+YOUR LIBRARY
+Settings, favorites, and play history are stored in data\library.json beside
+the EXE. Keep the whole folder when moving the app. Library saves retain a
+backup. A corrupt library is preserved before starting a fresh one.
+The app does not modify ROMs, emulator settings, BIOS files, or game saves.
+
+IMPORT A WHOLE COLLECTION
+Import ROMs expects system subfolders such as:
+  ROMs\nes
+  ROMs\snes
+  ROMs\n64
+  ROMs\gba
+  ROMs\nds
+  ROMs\3ds
+  ROMs\gc
+  ROMs\wii
+  ROMs\psx
+  ROMs\ps2
+  ROMs\psp
+  ROMs\megadrive
+  ROMs\saturn
+  ROMs\dreamcast
+  ROMs\arcade
+Other names can be assigned with System setup. Scanning is recursive.
+Repeated scans preserve favorites and avoid duplicate file entries.
+Scans skip symbolic directory links and inaccessible folders.
+Missing games remain listed until you remove them with More.
+
+RETROARCH
+Choose retroarch.exe in System setup, enable Launch through RetroArch,
+and browse to the installed core DLL (usually in RetroArch\cores).
+Set launch arguments to: "{rom}"
+Orbit adds: -L "selected-core.dll"
+Core names shown in setup are suggestions; browse to your actual DLL.
+BIOS files, firmware, and RetroArch cores must already be configured.
+
+STANDALONE LAUNCH ARGUMENTS
+Defaults are included, but your emulator version may need adjustments.
+  DuckStation: -batch "{rom}"
+  PCSX2:      -batch "{rom}"
+  Dolphin:    -b -e "{rom}"
+  Cemu:       -g "{rom}"
+  PPSSPP:     "{rom}"
+  xemu:       -dvd_path "{rom}"
+  Xenia:      "{rom}"
+  MAME:       {name}
+MAME needs its ROM search path configured separately in MAME.
+PS3: use More > Add a game file > All files and select PS3_GAME\USRDIR\EBOOT.BIN.
+Installed/package-based games may require a manually configured launch path.
+For arcade systems, put ROM archives in a dedicated ROM folder; BIOS archives
+can also appear in scans and can be removed from the library manually.
+Multi-disc playlists are recognized, but their individual discs may also be
+listed. Orbit does not manage firmware, encryption keys, or package installs.
+
+Available tokens:
+  {rom}    full selected file path
+  {name}   filename without extension
+  {romdir} folder containing the game
+Use double quotes around path tokens to handle spaces correctly.
+
+ARTWORK
+Place an image with the same base filename beside the ROM:
+  Aurora Quest.nes
+  Aurora Quest.png
+PNG, JPG, and JPEG sidecars are supported. Alternatively select a game,
+then More > Set selected game cover. Missing art displays its transparent console logo.
+The preview image uses fictional demonstration titles. No demo ROMs ship.
+
+KEYBOARD
+  Up: focus consoles; Down: focus games; Left/Right: move selection
+  Enter: confirm console selection or launch a selected game
+  F: favorite/unfavorite
+  Ctrl+K: focus search
+  Escape in search: clear it and return to games
+  F11: fullscreen
+  F1: help
+
+CONTROLLER (XInput / Xbox-compatible)
+  D-pad or left stick: navigate consoles and games
+  A: launch
+  X: favorite/unfavorite
+  LB / RB: previous/next category or system
+  Start: fullscreen
+Generic DirectInput controllers need an XInput mapping tool. The emulator
+handles controls while a game runs. Close the emulator to return to Orbit.
+Physical controller input has not been tested on this PC.
+
+SCOPE
+This is a first working frontend with 29 system presets, configurable
+launch commands, search, local artwork, favorites, recent games, and
+fullscreen navigation. It does not include ES-DE themes, online artwork
+scraping, video previews, automatic emulator downloads, or games/BIOS.
+System presets organize launch settings; the chosen emulator determines
+whether a game is supported. Folder scans run in the background; large
+libraries render only the visible tiles.
+
+VALIDATION
+Automated checks passed for file filtering, duplicate import prevention,
+favorites persistence, CUE track suppression, quoted launch paths, an actual
+test-process launch, RetroArch launch arguments, missing-core rejection,
+opening the main/setup windows, and backup recovery for corrupt JSON.
+The empty and populated library layouts were visually inspected.
+Actual emulator/game launches depend on your installed software and have
+not been tested against your collection.
+
+SOURCE
+OrbitLibrary.cs, Premium.cs, ConsoleUI.cs, Rendering.cs, assets, and orbit.ico are included. Run build.cmd to rebuild using
+the Windows .NET Framework compiler. This is an original implementation;
+it does not bundle or copy Cocoon or ES-DE code/assets.
+
+DARK SPACE INTERFACE
+Horizontal console logo navigation, a large selected-game spotlight, midnight
+colors, clean typography, animated card entrances and selection highlights.
+The backdrop contains faint twinkling stars and gently drifting minimalist
+planets. More > Animated background toggles background movement.
+All 29 console images were generated with the built-in image generator and
+have genuine transparent alpha backgrounds. The exact prompts are included
+in assets\GENERATION-PROMPTS.json. Brand marks identify their systems.
+
+Normal startup opens a fullscreen three-second Orbit intro, then brings the
+fullscreen library to the foreground. It releases its temporary topmost flag
+after 250ms so launching an emulator can take focus. F11 returns to a window.
+Your existing desktop shortcut launches this updated executable.
+
+ADDITIONAL VALIDATION
+Console arrow navigation, all-game/favorite/search filters, fullscreen bounds
+and window restoration, all 29 logo assets, and space-background animation
+passed checks. Fullscreen startup was rendered and checked at 2560 x 1440;
+the temporary topmost flag was released. PNG alpha channels were inspected.
+
+PERFORMANCE UPDATE
+Virtual gallery, asynchronous artwork, bounded display-size image caches,
+cached space scenery, region-based redraws, elapsed-time animation easing,
+background imports/scans, and debounced search. Animation pauses while the
+window is inactive or minimized. Logos preload during the three-second intro.
+See PERFORMANCE.md and validation/ for measurements and stress-test results.

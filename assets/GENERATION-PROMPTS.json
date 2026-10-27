@@ -1,0 +1,151 @@
+{
+  "mode": "Built-in image_gen tool",
+  "transparent_background": true,
+  "assets": [
+    {
+      "id": "nes",
+      "name": "Nintendo Entertainment System",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Nintendo Entertainment System logo: classic red Nintendo oval and ENTERTAINMENT SYSTEM lettering. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "snes",
+      "name": "Super Nintendo",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Super Nintendo logo: red italic SUPER NINTENDO wordmark and colored four-button emblem. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "n64",
+      "name": "Nintendo 64",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Nintendo 64 logo: recognizable colorful three-dimensional N64 N emblem. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "gb",
+      "name": "Game Boy",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Game Boy logo: recognizable dark blue italic GAME BOY wordmark with subtle silver edge for dark UI readability. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "gbc",
+      "name": "Game Boy Color",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Game Boy Color logo: blue GAME BOY wordmark and multicolored COLOR letters. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "gba",
+      "name": "Game Boy Advance",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Game Boy Advance logo: recognizable dark indigo GAME BOY ADVANCE wordmark with subtle bright silver edges. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "nds",
+      "name": "Nintendo DS",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Nintendo DS logo: recognizable Nintendo DS wordmark and small double screen symbol. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "3ds",
+      "name": "Nintendo 3DS",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Nintendo 3DS logo: recognizable Nintendo 3DS wordmark, red 3 and silver white DS. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "gc",
+      "name": "Nintendo GameCube",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Nintendo GameCube logo: recognizable violet nested-cube G emblem and silver NINTENDO GAMECUBE wordmark. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "wii",
+      "name": "Nintendo Wii",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Nintendo Wii logo: recognizable silver Wii wordmark. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "wiiu",
+      "name": "Nintendo Wii U",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Nintendo Wii U logo: recognizable silver Wii and cyan U wordmark. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "switch",
+      "name": "Nintendo Switch",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Nintendo Switch logo: recognizable red split Joy-Con emblem with white NINTENDO SWITCH lettering. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "psx",
+      "name": "PlayStation",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the PlayStation logo: recognizable classic red P with yellow green blue S and PlayStation lettering. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "ps2",
+      "name": "PlayStation 2",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the PlayStation 2 logo: recognizable blue gradient geometric PS2 logo and small silver PlayStation 2 lettering. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "ps3",
+      "name": "PlayStation 3",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the PlayStation 3 logo: recognizable sleek silver PS3 wordmark. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "psp",
+      "name": "PlayStation Portable",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the PlayStation Portable logo: recognizable silver thin-line PSP wordmark and small PLAYSTATION PORTABLE lettering. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "megadrive",
+      "name": "Sega Mega Drive / Genesis",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Sega Mega Drive / Genesis logo: recognizable metallic SEGA GENESIS logo. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "mastersystem",
+      "name": "Sega Master System",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Sega Master System logo: recognizable blue SEGA and silver MASTER SYSTEM wordmark. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "gamegear",
+      "name": "Sega Game Gear",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Sega Game Gear logo: recognizable blue SEGA and silver GAME GEAR with three colored ovals. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "segacd",
+      "name": "Sega CD",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Sega CD logo: recognizable blue SEGA CD wordmark. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "sega32x",
+      "name": "Sega 32X",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Sega 32X logo: recognizable blue SEGA and metallic red 32X wordmark. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "saturn",
+      "name": "Sega Saturn",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Sega Saturn logo: recognizable blue ringed planet SEGA SATURN emblem. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "dreamcast",
+      "name": "Sega Dreamcast",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Sega Dreamcast logo: recognizable orange spiral and silver Dreamcast wordmark. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "xbox",
+      "name": "Original Xbox",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Original Xbox logo: recognizable bright green sphere X emblem with green XBOX lettering. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "xbox360",
+      "name": "Xbox 360",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Xbox 360 logo: recognizable silver sphere with green X and XBOX 360 wordmark. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "arcade",
+      "name": "Arcade / Neo Geo",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Arcade / Neo Geo logo: gold premium NEO GEO wordmark with small ARCADE lettering. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "pce",
+      "name": "PC Engine / TurboGrafx-16",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the PC Engine / TurboGrafx-16 logo: recognizable red and dark silver PC Engine wordmark. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "atari2600",
+      "name": "Atari 2600",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the Atari 2600 logo: recognizable red Atari three-prong emblem and bright silver ATARI 2600 lettering. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    },
+    {
+      "id": "dos",
+      "name": "DOS PC",
+      "prompt": "Use case: logo-brand. Asset type: isolated transparent PNG console logo for an emulator frontend. Create ONLY the DOS PC logo: original tasteful silver DOS letters with a small blue terminal cursor emblem. Polished crisp emblem with restrained metallic finish, retaining recognizable original brand forms and colors. Centered composition, logo occupies roughly 75% width; 12% clear padding on all sides. Genuine fully transparent alpha background outside the letters and symbol, including spaces between letters; NO background, NO tile, NO frame, NO glow rectangle, NO checkerboard drawn into image, NO console hardware or controllers, NO ground or drop shadow. Readable at small sizes on a dark blue UI. Exact console name, no extra text or watermarks."
+    }
+  ]
+}
