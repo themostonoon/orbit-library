@@ -37,7 +37,7 @@ import SwiftUI
         let discs = try ScanEngine.scan(existing: [], folders: ["psx":roms.path]); try check(discs.count == 1 && discs[0].path.hasSuffix(".cue"), "CUE track suppression")
         let settings = PlatformSettings(exe: "/usr/bin/true", args: "\"{rom}\" --name \"{name}\" --dir \"{romdir}\"")
         let command = try LaunchCommand.build(game: added[0], settings: settings)
-        try check(command.1[0] == rom.path && command.1[2] == rom.deletingPathExtension().lastPathComponent, "Path tokens preserve quotes and literal shell characters")
+        try check(command.1[0] == added[0].path && command.1[2] == URL(fileURLWithPath: added[0].path).deletingPathExtension().lastPathComponent, "Path tokens preserve quotes and literal shell characters")
         try check(try LaunchCommand.tokenize("'one two' \"three four\" five") == ["one two", "three four", "five"], "Argument tokenizer")
         let process = Process(); process.executableURL = command.0; process.arguments = command.1; try process.run(); process.waitUntilExit(); try check(process.terminationStatus == 0, "Native process launch")
         var retro = settings; retro.retroArch = true; retro.core = root.appendingPathComponent("test core.dylib").path; try Data().write(to: URL(fileURLWithPath: retro.core))
@@ -114,4 +114,5 @@ import SwiftUI
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }
     func applicationWillTerminate(_ notification: Notification) { model?.save() }
 }
+
 
